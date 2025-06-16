@@ -30,7 +30,7 @@ public class Main {
         return painting;
     }
     public static void artMenu(Scanner scanner) throws IOException {
-
+        ElementVisit elementVisit = new ElementVisit();
         System.out.println("Enter the path of the painting description");
         String path=scanner.nextLine();
         Painting root= readElementDetails(path);
@@ -45,7 +45,10 @@ public class Main {
             switch (myString) {
                 case "c":
                     //TODO: Add counting behavior
-
+                    for (Element element : root.elementList) {
+                        element.accept(elementVisit);
+                    }
+                    System.out.println("Total elements counted: " + elementVisit.counter);
                     break;
                 case "sh":
                     //TODO: Add short representation behavior
