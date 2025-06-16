@@ -18,8 +18,28 @@ public class Painting {
         }
         else {
             Element containingElement = pathToElementMap.get(element.getPath());
-
 			//TODO: add element as a child of containingElement
+            if (containingElement instanceof Island) {
+                Island island = (Island) containingElement;
+
+                if (element.getHabitat() == Habitat.AQUATIC) {
+                    System.out.println(island.getName()
+                            + " cannot contain "
+                            + element.getName());
+                } else {
+                    island.islandElementsList.add(element);
+                }
+            } else if (containingElement instanceof Lake) {
+                Lake lake = (Lake) containingElement;
+
+                if (element.getHabitat() == Habitat.TERRESTRIAL) {
+                    System.out.println(lake.getName()
+                            + " cannot contain "
+                            + element.getName());
+                } else {
+                    lake.lakeElementsList.add(element);
+                }
+            }
         }
     }
 

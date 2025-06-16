@@ -30,6 +30,7 @@ public class Main {
         return painting;
     }
     public static void artMenu(Scanner scanner) throws IOException {
+
         System.out.println("Enter the path of the painting description");
         String path=scanner.nextLine();
         Painting root= readElementDetails(path);
@@ -44,6 +45,7 @@ public class Main {
             switch (myString) {
                 case "c":
                     //TODO: Add counting behavior
+
                     break;
                 case "sh":
                     //TODO: Add short representation behavior
