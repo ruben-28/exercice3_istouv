@@ -1,4 +1,5 @@
- 
+import java.awt.*;
+
 public class Kite extends Element {
     Color color;
 
@@ -23,5 +24,9 @@ public class Kite extends Element {
     @Override
     public Habitat getHabitat() {
         return Habitat.TERRESTRIAL;
+    }
+
+    public void accept(PaintingVisitor paintingVisitor) {
+        paintingVisitor.visit(this);
     }
 }

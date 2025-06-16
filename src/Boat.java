@@ -19,4 +19,8 @@ public class Boat extends Element{
     public Habitat getHabitat() {
         return Habitat.AQUATIC;
     }
+
+    public void accept(PaintingVisitor paintingVisitor) {
+        paintingVisitor.visit(this);
+    }
 }

@@ -28,4 +28,8 @@ public class Kid extends Element {
     public Habitat getHabitat() {
         return Habitat.AMPHIBIAN;
     }
+
+    public void accept(PaintingVisitor paintingVisitor) {
+        paintingVisitor.visit(this);
+    }
 }

@@ -21,4 +21,10 @@ public class Tree extends Element {
     public Habitat getHabitat() {
         return Habitat.TERRESTRIAL;
     }
+
+
+    public void accept(PaintingVisitor paintingVisitor) {
+        paintingVisitor.visit(this);
+    }
+
 }

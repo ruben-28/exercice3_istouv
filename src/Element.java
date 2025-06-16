@@ -36,5 +36,6 @@ public abstract class Element{
     }
     public abstract String getName();
     public abstract Habitat getHabitat();
+    public abstract void accept(PaintingVisitor paintingVisitor);
 
 }
