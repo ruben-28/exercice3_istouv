@@ -35,7 +35,7 @@ public class LongPrint implements PaintingVisitor {
 
     @Override
     public void visit(Kid kid) {
-        int age = (2025 - kid.getBirthYear() + 1);
+        int age = (2023 - kid.getBirthYear() );
         this.longPrint += "A "
                 + age
                 + " year old kid with "

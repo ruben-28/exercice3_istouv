@@ -51,7 +51,7 @@ public class Main {
                     for (Element element : root.elementList) {
                         element.accept(elementVisit);
                     }
-                    System.out.println("Total elements counted: " + elementVisit.elementCounter);
+                    System.out.println(elementVisit.elementCounter);
                     break;
                 case "sh":
                     //TODO: Add short representation behavior
@@ -64,14 +64,14 @@ public class Main {
                     for (Element element : root.elementList) {
                         element.accept(totalArea);
                     }
-                    System.out.println("Total area: " + totalArea.totalAreaCounter);
+                    System.out.println(Math.round(+ totalArea.totalAreaCounter));
                     break;
                 case "lp":
                     //TODO: Add long representation behavior
                     for (Element element : root.elementList) {
                         element.accept(longPrint);
                     }
-                    System.out.println("Long print completed.");
+                    System.out.println(longPrint.longPrint);
                     break;
 
 

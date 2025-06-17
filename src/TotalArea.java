@@ -9,8 +9,8 @@ public class TotalArea implements PaintingVisitor{
 
     @Override
     public void visit(Boat boat) {
-        double w= boat.getWidth();
-        double l = boat.getLength();
+        double w= boat.width;
+        double l = boat.length;
         double d3 = w * (l - w * 0.5);
         double boatArea = d3 + Math.PI * (Math.pow(w / 2, 2)) * 0.5;
         totalAreaCounter += boatArea;
@@ -26,21 +26,17 @@ public class TotalArea implements PaintingVisitor{
 
     @Override
     public void visit(Tree tree) {
-        double W = tree.getWidth();
-        double H = tree.getLength();
-
-
-        double rectArea    = (W/2) * H;
-        double triArea     = 0.5 * W * H;
-        double treeArea    = rectArea + triArea;
+        double W = tree.width;
+        double H = tree.length;
+        double treeArea = 0.5 * (W * H);
         totalAreaCounter += treeArea;
 
     }
 
     @Override
     public void visit(Kid kid) {
-        double w = kid.getWidth();
-        double l = kid.getLength();
+        double w = kid.width;
+        double l = kid.length;
         double d3 = w * (l - w);
         double kidArea = d3 + Math.PI * (Math.pow(w * 0.5, 2));
         totalAreaCounter += kidArea;
