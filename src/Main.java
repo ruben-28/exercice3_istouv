@@ -31,6 +31,9 @@ public class Main {
     }
     public static void artMenu(Scanner scanner) throws IOException {
         ElementVisit elementVisit = new ElementVisit();
+        ShortPrint shortPrint = new ShortPrint();
+        TotalArea totalArea = new TotalArea();
+        LongPrint longPrint = new LongPrint();
         System.out.println("Enter the path of the painting description");
         String path=scanner.nextLine();
         Painting root= readElementDetails(path);
@@ -48,16 +51,27 @@ public class Main {
                     for (Element element : root.elementList) {
                         element.accept(elementVisit);
                     }
-                    System.out.println("Total elements counted: " + elementVisit.counter);
+                    System.out.println("Total elements counted: " + elementVisit.elementCounter);
                     break;
                 case "sh":
                     //TODO: Add short representation behavior
+                    for (Element element : root.elementList) {
+                        element.accept(shortPrint);
+                    }
                     break;
                 case "ta":
                     //TODO: Add area calculation behavior
+                    for (Element element : root.elementList) {
+                        element.accept(totalArea);
+                    }
+                    System.out.println("Total area: " + totalArea.totalAreaCounter);
                     break;
                 case "lp":
                     //TODO: Add long representation behavior
+                    for (Element element : root.elementList) {
+                        element.accept(longPrint);
+                    }
+                    System.out.println("Long print completed.");
                     break;
 
 

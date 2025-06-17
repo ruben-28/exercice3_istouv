@@ -1,23 +1,30 @@
 public class ElementVisit implements PaintingVisitor{
-    int counter = 0;
+    int elementCounter = 0;
     @Override
-    public void visit(Kite kite){counter++;}
+    public void visit(Kite kite){
+        elementCounter++;}
 
     @Override
-    public void visit(Boat boat) {counter++;}
+    public void visit(Boat boat) {
+        elementCounter++;}
 
     @Override
-    public void visit(Flag flag){counter++;}
+    public void visit(Flag flag){
+        elementCounter++;}
 
     @Override
-    public void visit(Tree tree) {counter++;}
+    public void visit(Tree tree) {
+        elementCounter++;}
 
     @Override
-    public void visit(Kid kid) {counter++;}
+    public void visit(Kid kid) {
+        elementCounter++;}
 
     @Override
-    public void visit(Lake lake){counter++;}
+    public void visit(Lake lake){
+        elementCounter++;}
 
     @Override
-    public void visit(Island island) {counter++;}
+    public void visit(Island island) {
+        elementCounter++;}
 }
