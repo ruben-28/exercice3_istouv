@@ -96,13 +96,23 @@ public class Main {
         System.out.println("c - Classified ([CLASSIFIED] at the end)");
         System.out.println("t - To Commander ([TO COMMANDER] at the end)");
         System.out.println("a - Audio Attachment ([AUDIO ATTACHED] at the end)");
-
+        List<Character> decoratorCodes = new ArrayList<>();
         while (true) {
             String dec = sc.nextLine().trim();
             if (dec.equals("s")) break;
+            if (dec.length() == 1 && "ucta".contains(dec)) {
+                decoratorCodes.add(dec.charAt(0));
+            } else {
+                System.out.println("Invalid decorator code. Please enter one of: u, c, t, a or 's' to submit.");
+            }
         }
         // TODO: Add a Report Factory and use it to create a report based on the type and decorators
         Report report = null;
+        try{
+            report = ReportFactory.createReport(type, content, decoratorCodes);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
 
         if (report != null)
             System.out.println(report.getContent());
