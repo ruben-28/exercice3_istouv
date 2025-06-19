@@ -1,8 +1,11 @@
  
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-//A utility class converting element description to the corresponding element instance
+
+/**
+ * Utility factory that converts textual element descriptions into
+ * concrete {@link Element} instances.
+ */
 public class ElementDetailsFactory {
     public static void main(String[] args) {
         Element details = ElementDetailsFactory.getPaintingElement("island name: Madagascar, diameter: 8");
@@ -22,6 +25,13 @@ public class ElementDetailsFactory {
     private final static String KID_CAPTURE_PATTERN = "birth year: (\\d+), hair color: (\\w+), width: (\\d+), height: (\\d+)";
     private final static String ISLAND_CAPTURE_PATTERN = "name: (\\w+), diameter: (\\d+)";
     private final static String LAKE_CAPTURE_PATTERN = "name: (\\w+), diameter: (\\d+)";
+    /**
+     * Parses a line from the description file and creates the corresponding
+     * {@link Element} instance.
+     *
+     * @param description textual element description
+     * @return created element
+     */
     public static Element getPaintingElement(String description){
         Matcher pathMatcher = getMatcher(PATH_CAPTURE_PATTERN, description);
         String elementPath = pathMatcher.group(1);
@@ -67,6 +77,9 @@ public class ElementDetailsFactory {
         }
         throw new RuntimeException("wrong file type");
     }
+    /**
+     * Utility helper to build a {@link Matcher} for the given regex.
+     */
     public static Matcher getMatcher(String regex, String toMatch){
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(toMatch);

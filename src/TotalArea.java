@@ -1,4 +1,8 @@
+/**
+ * Visitor that accumulates the total area covered by elements.
+ */
 public class TotalArea implements PaintingVisitor{
+    /** Running area sum. */
     public double totalAreaCounter = 0;
     @Override
     public void visit(Kite kite) {

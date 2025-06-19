@@ -5,6 +5,10 @@ import java.util.*;
 
 import static java.util.stream.Collectors.toMap;
 
+/**
+ * Simple command line application demonstrating both the painting and
+ * reporting examples.
+ */
 public class Main {
 
     public static void main(String[] args) throws IOException {
@@ -20,6 +24,9 @@ public class Main {
             reportsMenu(scanner);
         }
     }
+    /**
+     * Reads the element description file and builds the Painting structure.
+     */
     public static Painting readElementDetails(String path) throws IOException {
         Painting painting = new Painting();
         Map<String, Element> files = new HashMap();
@@ -29,6 +36,9 @@ public class Main {
                 .forEach(e-> painting.addElement(e));
         return painting;
     }
+    /**
+     * Menu handling the painting demonstration.
+     */
     public static void artMenu(Scanner scanner) throws IOException {
         ElementVisit elementVisit = new ElementVisit();
         ShortPrint shortPrint = new ShortPrint();
@@ -80,6 +90,9 @@ public class Main {
         }
     }
 
+    /**
+     * Menu handling the reporting demonstration.
+     */
     public static void reportsMenu(Scanner sc){
         System.out.println("Choose report type:");
         System.out.println("1 - Incident");

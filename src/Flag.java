@@ -1,10 +1,17 @@
  
-
+/**
+ * Element representing a flag with a colored fabric and a pole height.
+ */
 public class Flag extends Element {
 
+    /** Color of the flag. */
     Color color;
+    /** Height of the flag pole. */
     int carrierHeight;
 
+    /**
+     * Constructs a flag instance.
+     */
     public Flag(double width, double length, Color color, int carrierHeight, String path) {
         super(width, length, path);
         this.color = color;

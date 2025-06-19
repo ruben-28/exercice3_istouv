@@ -1,6 +1,12 @@
 import java.util.List;
 
+/**
+ * Factory responsible for creating reports and applying decorators.
+ */
 public class ReportFactory {
+    /**
+     * Creates a report of the requested type and wraps it with decorators.
+     */
     public static Report createReport(String type, String content, List<Character> decoratorCodes) {
         Report report;
         switch (type) {
@@ -40,4 +46,5 @@ public class ReportFactory {
             }
         }
         return report;
-    }}
+    }
+}

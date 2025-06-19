@@ -1,4 +1,8 @@
+/**
+ * Simple visitor counting the number of visited elements.
+ */
 public class ElementVisit implements PaintingVisitor{
+    /** Running total of visited elements. */
     int elementCounter = 0;
     @Override
     public void visit(Kite kite){

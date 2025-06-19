@@ -1,4 +1,7 @@
  
+/**
+ * Base class for all elements that can appear in a painting.
+ */
 public abstract class Element{
     protected double width;
     protected double length;
@@ -21,6 +24,13 @@ public abstract class Element{
         this.length = length;
     }
 
+    /**
+     * Creates an element.
+     *
+     * @param width  element width
+     * @param length element length
+     * @param path   path of the parent element in the hierarchy
+     */
     public Element(double width, double length, String path) {
         this.width = width;
         this.length = length;
@@ -28,9 +38,11 @@ public abstract class Element{
     }
 
 
+    /** @return hierarchical path of this element */
     public String getPath(){
         return path;
     }
+    /** @return full path including this element's name */
     public String getFullName(){
         return path.isEmpty()? getName() : path+"/"+getName();
     }
