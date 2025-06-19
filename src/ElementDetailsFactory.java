@@ -1,7 +1,7 @@
  
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+//A utility class converting element description to the corresponding element instance
 /**
  * Utility factory that converts textual element descriptions into
  * concrete {@link Element} instances.
