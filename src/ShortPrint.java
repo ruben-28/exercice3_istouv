@@ -1,5 +1,8 @@
 import static java.lang.System.out;
 
+/**
+ * Visitor that prints only the full name of each element.
+ */
 public class ShortPrint implements PaintingVisitor {
 
     @Override

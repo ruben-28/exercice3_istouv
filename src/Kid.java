@@ -1,9 +1,14 @@
  
-
+/**
+ * Element representing a child that can appear on land or in water.
+ */
 public class Kid extends Element {
     private int birthYear;
     private Color hairColor;
 
+    /**
+     * Constructs a kid element.
+     */
     public Kid(double width, double height, int birthYear, Color hairColor, String path) {
         super(width, height, path);
         this.birthYear = birthYear;

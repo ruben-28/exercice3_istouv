@@ -1,5 +1,9 @@
 
+/**
+ * Visitor that builds a long descriptive string for every element.
+ */
 public class LongPrint implements PaintingVisitor {
+    /** Accumulated description. */
     public String longPrint = "";
     @Override
     public void visit(Kite kite) {

@@ -4,13 +4,20 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Root container storing all elements of a painting.
+ */
 public class Painting {
     Map<String, Element> pathToElementMap;
     List<Element> elementList;
+    /** Default constructor. */
     Painting(){
         elementList=new ArrayList<>();
         pathToElementMap = new HashMap<>();
     }
+    /**
+     * Adds an element to the painting hierarchy.
+     */
     public void addElement(Element element){
         pathToElementMap.put(element.getFullName(), element);
         if (element.getPath().isEmpty()){

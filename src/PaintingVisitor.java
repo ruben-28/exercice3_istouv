@@ -1,3 +1,6 @@
+/**
+ * Visitor interface for traversing painting elements.
+ */
 public interface PaintingVisitor {
     public void visit(Kite kite);
     public void visit(Boat boat);
